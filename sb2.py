@@ -4,13 +4,13 @@ import json, time, random
 
 #line = Lineline(authToken='AUTH TOKEN')
 
-line = LineClient(id = 'ENTER YOUR LINE EMAIL ADRESS HERE', passwd = 'Password')
+line = LineClient(id = 'panutchakorn_2533@hotmail.com', passwd = 'takumi2533')
 
 
-line.log("Auth Token : " + str(line.authToken))
+line.log("Auth Token : d007709718f8a8af2042ae3ebc48aca5" + str(line.authToken))
 
 channel = LineChannel(line)
-line.log("Channel Access Token : " + str(channel.channelAccessToken))
+line.log("Channel Access Token : hFcHkq7njlfHTSIAyNbkgTp3FQdbV7ntUr3DNMucqCgM4UYWB4RHblMw1oO7QZNaS8Pb+mbn+PdC01dx5JperIBvSjl58oNCWWLVEgDjhIYEq9lObjhAVfrtX6+6zrBBcfGXxpKthYd4ke17od+iiswh8p6xlupEHSzmJbGEAiwlZrQn+cnjYYg8swHSC/3b" + str(channel.channelAccessToken))
 
 poll = LinePoll(line)
 
@@ -30,7 +30,7 @@ while True:
                     if msg.toType == 2:
                         may = line.getProfile().mid
                         if may in str(msg.contentMetadata) and 'MENTION' in str(msg.contentMetadata):
-                            pilih = ['yang tag sy semoga jomblo seumur hidup','ngapain tag tag woe, kangen?','ada apa ini? ko di tag?','duhh kena tag, dianya kesepian kali yah','gk usah tag, gift tikel aja']
+                            pilih = ['','','','','']
                             rslt = random.choice(pilih)
                             line.sendText(msg.to, str(rslt))
                         else:
@@ -141,7 +141,7 @@ while True:
                                     cctv['cyduk'][msg.to]=False
                                     line.sendText(msg.to, cctv['sidermem'][msg.to])
                                 else:
-                                    line.sendText(msg.to, "Heh belom di Set")
+                                    line.sendText(msg.to, "ไม่ได้ อยู่ในเงื่อนไข")
                 except Exception as e:
                     line.log("[SEND_MESSAGE] ERROR : " + str(e))
 
@@ -154,7 +154,7 @@ while True:
                                 pass
                             else:
                                 cctv['sidermem'][op.param1] += "\n~ " + Name
-                                pref=['eh ada','hai kak','aloo..','nah','lg ngapain','halo','sini kak']
+                                pref=['สวัสดีครับ','','','','','',' ']
                                 line.sendText(op.param1, str(random.choice(pref))+' '+Name)
                         else:
                             pass
